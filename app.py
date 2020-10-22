@@ -40,6 +40,8 @@ def welcome():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
+        f"/api/v1.0/start_date<br/>"
+        f"/api/v1.0/start_date/end_date<br/>"
     )
 @app.route("/api/v1.0/precipitation")
 def precipitation():
@@ -87,6 +89,48 @@ def temperature():
     results_dict["Tobs per date"] = results
     session.close()
     return jsonify(results_dict)
+
+@app.route("/api/v1.0/<start>")
+def measurements_start(start):
+    results = {}
+    session = Session(engine)
+    dates = session.query(Measurement.date).all()
+    for i in range(len(dates)):
+        if start == dates[i][0]:
+            results["Minimum temperature"] = session.query(func.min(Measurement.tobs)).\
+                    filter(Measurement.date >= start).scalar()
+            results["Maximum temperature"] = session.query(func.max(Measurement.tobs)).\
+                    filter(Measurement.date >= start).scalar()
+            results["Average temperature"] = round(session.query(func.avg(Measurement.tobs)).\
+                    filter(Measurement.date >= start).scalar(),2)
+            session.close()
+            return jsonify(results)
+
+    return jsonify({"error": f"Information for {start} not found."}), 404
+
+@app.route("/api/v1.0/<start>/<end>")
+def measurements_start_end(start, end):
+    results = {}
+    session = Session(engine)
+    dates = session.query(Measurement.date).all()
+    for i in range(len(dates)):
+        if start == dates[i][0]:
+            star_date_in = True
+        if end == dates[i][0]:
+            end_date_in = True
+    if (star_date_in == True & end_date_in == True):   
+        results["Minimum temperature"] = session.query(func.min(Measurement.tobs)).\
+                filter(Measurement.date >= start).filter(Measurement.date <= end).scalar()
+        results["Maximum temperature"] = session.query(func.max(Measurement.tobs)).\
+                filter(Measurement.date >= start).filter(Measurement.date <= end).scalar()
+        results["Average temperature"] = round(session.query(func.avg(Measurement.tobs)).\
+                filter(Measurement.date >= start).filter(Measurement.date <= end).scalar(),2)
+        session.close()
+        return jsonify(results)
+    else:
+        return jsonify({"error": f"Information between {start} and {end} not found. Verify your date ranges."}), 404
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
