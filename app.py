@@ -1,5 +1,3 @@
-import numpy as np
-
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -20,7 +18,6 @@ Base.prepare(engine, reflect=True)
 
 # Save reference to the tables
 Measurement = Base.classes.measurement
-Station = Base.classes.station
 
 #################################################
 # Flask Setup
@@ -129,8 +126,5 @@ def measurements_start_end(start, end):
         return jsonify(results)
     else:
         return jsonify({"error": f"Information between {start} and {end} not found. Verify your date ranges."}), 404
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
