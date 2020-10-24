@@ -13,10 +13,16 @@ The first step was to create a session to the database and identify the classes 
 <p align="center">
   <img width="560" height="250" src="https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/figures/tables.png">
 </p>
-Having the database's description with each table and their columns, the next step was to show the performance of the precipitation levels in Hawaii in the last year register in the data.   So, it was necessary to recognize the last date registered in the data and make the analysis starting 365 days before it. As a result, it was possible to see in a graph the precipitation levels in inches per day, where some spikes are distinguished around September, February, and between May and June.<br/>
+Having the database's description with each table and their columns, the next step was to show the performance of the precipitation levels in Hawaii in the last year register in the data.   So, it was necessary to recognize the last date registered in the data and make the analysis starting 365 days before it. As a result, it was possible to see in a graph the precipitation levels in inches per day where some spikes are distinguished around September, February, and between May and June. After that, some summary statistics were calculate using DataFrames structures<br/>
 <br/>
 <p align="center">
   <img width="660" height="450" src="https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/figures/precipitation_figure.png">
 </p>
 <br/>
+After the precipitation analysis in the last year of data, a temperature analysis was done in the same period; however, for this new examination of the data, stations were taken into account. In that way, it was necessary to recognize the stations that had information related to the last year and the number of datapoints the database had for each station. Next, in the most active station (the one with a higher number of data points) the minimum, the maximum, and the average temperature values were calculated.
+Finally, for the most active station, a histogram with 12 bins was plotted, having a larger concentration in temperatures between 77°F and 80°F.
+<br/>
+<p align="center">
+  <img width="660" height="450" src="https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/figures/histogram_temp.png">
+</p>
 
