@@ -33,9 +33,9 @@ Continuing with the data exploration, two specific dates were selected - the ide
 </p>
 <br/>
 The dates selected were March 15 and April 06, 2017, where the average temperature was 73.64 °F, the minimum was  65°F, and the maximum was  80 °F. The y error bar in black represents the difference between the maximum and the minimum temperature. 
-<br/>
+<br/><br/>
 For the end of this analysis, daily normals were calculated and plotted too. These calculations give as a result the minimum and maximum measured temperature per day having the information in all the stations, and the average temperature calculated with the register data in all the stations too. This allows seeing the difference between these three values in a no stacked area plot where it is possible to see the fluctuation in the temperature the days of the trip.  
-<br/>
+<br/><br/>
 <p align="center">
   <img width="660" height="450" src="https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/figures/normals_values.png">
 </p>
