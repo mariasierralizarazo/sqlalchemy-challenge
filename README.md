@@ -21,8 +21,16 @@ Having the database's description with each table and their columns, the next st
 <br/>
 After the precipitation analysis in the last year of data, a temperature analysis was done in the same period; however, for this new examination of the data, stations were taken into account. In that way, it was necessary to recognize the stations that had information related to the last year and the number of datapoints the database had for each station. Next, in the most active station (the one with a higher number of data points) the minimum, the maximum, and the average temperature values were calculated.
 Finally, for the most active station, a histogram with 12 bins was plotted, having a larger concentration in temperatures between 77°F and 80°F.<br/>
+<br/>
 <p align="center">
   <img width="660" height="450" src="https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/figures/histogram_temp.png">
 </p>
 <br/>
+Continuing with the data exploration, two specific dates were selected - the idea was to select a random period of time for having a vacation in Hawaii for at least 15 days-, and in those days the general average temperature was calculated and plotted in the following graph.<br/>
+<br/>
+<p align="center">
+  <img width="660" height="450" src="https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/figures/AverageTemperature.png">
+</p>
+<br/>
+The dates selected were March 15 and April 06, 2017, where the average temperature was 73.64 °F, the minimum was  65°F, and the maximum was  80 °F. The y error bar in black represents the difference between the maximum and the minimum temperature. 
 
