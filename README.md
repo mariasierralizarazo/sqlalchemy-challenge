@@ -41,6 +41,6 @@ For the end of this analysis, daily normals were calculated and plotted too. The
 </p>
 <br/>
 <a href="https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/climate.ipynb"> Click here to see the complete code in the Jupyter Notebook</a>.
-<br/>
+<br/><br/>
 Another useful application in this project was created using Flask a micro web framework that allowed the generation of an API of the database given. 
 <a href="https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/app.py">Click here to see the code</a>.
