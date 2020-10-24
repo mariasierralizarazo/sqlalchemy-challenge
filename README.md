@@ -40,4 +40,4 @@ For the end of this analysis, daily normals were calculated and plotted too. The
   <img width="660" height="450" src="https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/figures/normals_values.png">
 </p>
 <br/>
-
+[Jupyter notebook with initial code](climate.ipyn)
