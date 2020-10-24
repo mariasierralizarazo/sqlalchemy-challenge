@@ -40,7 +40,7 @@ For the end of this analysis, daily normals were calculated and plotted too. The
   <img width="660" height="450" src="https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/figures/normals_values.png">
 </p>
 <br/>
-[Go to the Jupyter Notebook with the code](https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/climate.ipynb#section)
+[Go to the Jupyter Notebook with the code](https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/climate.ipynb "code")
 <br/>
 Another useful application in this project was created using Flask a micro web framework that allowed the generation of an API of the database given. [Click here to see the code](https://github.com/mariasierralizarazo/sqlalchemy-challenge/blob/master/app.py)
 <br/>
